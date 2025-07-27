@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    function createFunctionList() {
+  let functions = [];
+
+  for (let i = 0; i < 5; i++) {
+    // 'let' is block-scoped, so each function gets a fresh 'i'
+    functions.push(function () {
+      console.log("Index:", i);
+    });
+  }
+
+  return functions;
+}
+
+const functionList = createFunctionList();
+
+functionList[0]();  // Output: Index: 0
+functionList[1]();  // Output: Index: 1
+functionList[2]();  // Output: Index: 2
+functionList[3]();  // Output: Index: 3
+functionList[4]();  // Output: Index: 4
+
+</script>
